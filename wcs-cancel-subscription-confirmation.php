@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: WooCommerce Subscriptions - Delete Payment Method Confirmation
- * Plugin URI: https://github.com/Prospress/woocommerce-subscriptions-delete-payment-method-confirmation
+ * Plugin URI: https://github.com/Prospress/woocommerce-subscriptions-cancel-subscription-confirmation
  * Description: Adds a confirmation dialog when deleting a payment method.
  * Author: Prospress Inc.
  * Author URI: http://prospress.com/
  * Version: 1.0
  * License: GPLv3
  *
- * GitHub Plugin URI: Prospress/woocommerce-subscriptions-importer-exporter
+ * GitHub Plugin URI: Prospress/woocommerce-subscriptions-cancel-subscription-confirmation
  * GitHub Branch: master
  *
  * Copyright 2017 Prospress, Inc.  (email : freedoms@prospress.com)
