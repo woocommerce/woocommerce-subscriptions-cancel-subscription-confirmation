@@ -2,7 +2,7 @@
 
  For use with [WooCommerce Subscriptions](https://woocommerce.com/products/woocommerce-subscriptions/).
 
-Install and activate this plugin. It will provide a confirmation dialog reminding the user that individual subscriptions using the deleted method of payment will also need to be updated.
+Install and activate this plugin. It will provide a confirmation dialog asking if the customer is sure they want to cancel their subscription.
 
 ## Requirements
 
