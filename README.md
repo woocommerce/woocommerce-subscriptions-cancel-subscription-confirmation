@@ -12,7 +12,7 @@ This plugin was built while WC 2.6.13 and WCS 2.1.3 were current, and have not b
 
 To install:
 
-1. Download the latest version of the plugin [here](https://github.com/Prospress/woocommerce-subscriptions-delete-payment-method-confirmation/archive/master.zip)
+1. Download the latest version of the plugin [here](https://github.com/Prospress/woocommerce-subscriptions-cancel-subscription-confirmation/archive/master.zip)
 1. Go to **Plugins > Add New > Upload** administration screen on your WordPress site
 1. Select the ZIP file you just downloaded
 1. Click **Install Now**
@@ -20,7 +20,7 @@ To install:
 
 ## Reporting Issues
 
-If you find a problem or would like to request this plugin be extended, please [open a new Issue](https://github.com/Prospress/woocommerce-subscriptions-delete-payment-method-confirmation/issues/new).
+If you find a problem or would like to request this plugin be extended, please [open a new Issue](https://github.com/Prospress/woocommerce-subscriptions-cancel-subscription-confirmation/issues/new).
 
 ---
 
