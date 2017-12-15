@@ -1,4 +1,4 @@
-# WooCommerce Subscriptions - Delete Payment Method Confirmation
+# WooCommerce Subscriptions - Cancel Subscription Confirmation
 
  For use with [WooCommerce Subscriptions](https://woocommerce.com/products/woocommerce-subscriptions/).
 
@@ -6,7 +6,7 @@ Install and activate this plugin. It will provide a confirmation dialog remindin
 
 ## Requirements
 
-This plugin was built while WC 2.6.13 and WCS 2.1.3 were current, and have not been tested on any other versions. Use at own risk.
+This plugin was built while WC 3.2.6 and WCS 2.2.16 were current, and have not been tested on any other versions. Use at own risk.
 
 ## Installation
 
