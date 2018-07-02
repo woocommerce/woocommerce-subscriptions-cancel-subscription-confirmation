@@ -35,8 +35,10 @@ function wcs_cancel_subscription_confirmation() {
 	if ( ! function_exists( 'is_account_page' ) ) {
 		return;
 	}
-
-	if ( is_account_page() ) {
+	
+	$cancel_confirmation_required = apply_filters( 'wcs_cancel_confirmation_promt_enabled', ( 'yes' == get_option( "wcs-cancel-confirmation", 'no' ) ) ? true : false );
+	
+	if ( is_account_page() && 'yes' == $cancel_confirmation_required ) {
 		wp_register_script( 'wcs-cancel-subscription-confirmation-script', plugin_dir_url( __FILE__ ) . 'wcs-cancel-subscription-confirmation.js', array( 'jquery' ), '1.0.0', true );
 		$script_atts = array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -65,3 +67,23 @@ function wcs_cancel_confirmation() {
     wp_die(); 
 }
 add_action( 'wp_ajax_wcs_cancel_confirmation', 'wcs_cancel_confirmation' );
+
+
+function add_cancelation_settings( $settings ) {
+
+	$misc_section_end = wp_list_filter( $settings, array( 'id' => 'woocommerce_subscriptions_miscellaneous', 'type' => 'sectionend' ) );
+
+	$spliced_array = array_splice( $settings, key( $misc_section_end ), 0, array(
+		array(
+			'name'     => __( 'Ask for the cancelation reason', 'wcs-cancel-confirmation' ),
+			'desc'     => __( 'Promt the customer for a cancelation reason', 'wcs-cancel-confirmation' ),
+			'id'       => 'wcs-cancel-confirmation',
+			'default'  => 'no',
+			'type'     => 'checkbox',
+			'desc_tip' =>  __( 'Ask for the cancelation reason when the customer cancels a subscription from My account page. The provided reason will be added as a subscription note in the backend.' ),
+		),
+	) );
+
+	return $settings;
+}
+add_filter( 'woocommerce_subscription_settings', 'add_cancelation_settings'  );
