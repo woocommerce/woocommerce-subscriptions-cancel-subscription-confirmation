@@ -7,6 +7,8 @@
 * Author URI: http://prospress.com/
 * Version: 1.0
 * License: GPLv3
+* Tested up to: 5.0.0
+* WC tested up to: 3.5.1
 *
 * GitHub Plugin URI: Prospress/woocommerce-subscriptions-cancel-subscription-confirmation
 * GitHub Branch: master
