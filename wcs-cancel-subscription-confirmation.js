@@ -12,9 +12,9 @@ jQuery(document).ready(function($) {
 				'reason_to_cancel': confirmDelete
 			};
 
-			jQuery.post(cancellation_settings.ajax_url, data, function(response) {
+			jQuery.post(ajax_object.ajax_url, data, function(response) {
 				if(response=='' || response==null || response<=0){
-					alert(cancellation_settings.error_msg);
+					alert(ajax_object.error_msg);
 				}
 			}).done(function() {
 				window.location.href = cancelURL;
