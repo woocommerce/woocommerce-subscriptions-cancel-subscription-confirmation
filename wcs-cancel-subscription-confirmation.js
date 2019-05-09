@@ -1,23 +1,23 @@
 jQuery(document).ready(function($) {
 	$('.button.cancel').click(function(e) {
+		e.preventDefault();
 		var cancelURL = jQuery(this).attr("href");
 		var subscription_id = $.urlParam('subscription_id', cancelURL);
 
 		var confirmDelete = prompt(ajax_object.promt_msg, "");
-		if (confirmDelete == null || confirmDelete == "") {
-			e.preventDefault();
-		} else {
+		if (confirmDelete != null && confirmDelete != "") {
 			var data = {
 				'action': 'wcs_cancel_confirmation',
 				'subscription_id': subscription_id,
 				'reason_to_cancel': confirmDelete
 			};
 
-			jQuery.post(ajax_object.ajax_url, data, function(response) {
+			jQuery.post(cancellation_settings.ajax_url, data, function(response) {
 				if(response=='' || response==null || response<=0){
-					alert(ajax_object.error_msg);
-					e.preventDefault();
+					alert(cancellation_settings.error_msg);
 				}
+			}).done(function() {
+				window.location.href = cancelURL;
 			});
 		}
 	});
