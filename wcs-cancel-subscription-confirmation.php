@@ -39,7 +39,13 @@ function wcs_cancel_subscription_confirmation()
         return;
     }
     
-    $cancel_confirmation_required = apply_filters('wcs_cancel_confirmation_promt_enabled', ('yes' == get_option("wcs-ask-confirmation", 'no')) ? true : false);
+    $cancel_confirm_setting = false;
+    
+    if (('yes' == get_option("wcs-ask-confirmation", 'no')) || ('yes' == get_option('wcs-cancel-confirmation', 'no'))) {
+        $cancel_confirm_setting = true;
+    }
+    
+    $cancel_confirmation_required = apply_filters('wcs_cancel_confirmation_promt_enabled', $cancel_confirm_setting);
     
     if (is_account_page() && 'yes' == $cancel_confirmation_required) {
         wp_register_script('wcs-cancel-subscription-confirmation-script', plugin_dir_url(__FILE__) . 'wcs-cancel-subscription-confirmation.js', array( 'jquery' ), '1.0.0', true);
