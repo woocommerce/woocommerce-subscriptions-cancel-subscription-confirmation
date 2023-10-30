@@ -123,3 +123,10 @@ function add_cancelation_settings($settings)
     return $settings;
 }
 add_filter('woocommerce_subscription_settings', 'add_cancelation_settings');
+
+// Declare Woocommerce HPOS compatibility per https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+add_action( 'before_woocommerce_init', function() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );
